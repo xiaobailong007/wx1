@@ -1,5 +1,5 @@
 <view>
-  <swiper indicator-dots="true" autoplay="true">
+  <swiper interval="3000" circular="" indicator-dots="true" autoplay="true">
     <swiper-item>
       <image src="/images/bestplayers.png"></image>
     </swiper-item>
@@ -10,4 +10,23 @@
       <image src="/images/bestplayers.png"></image>
     </swiper-item>
   </swiper>
+
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="/images/avatar/1.png"></image>
+      <text class="post-date">Nov 18 2020</text>
+    </view>
+    <view>
+      <text class="post-title">2020LPL夏季赛季指南</text>
+      <image class="post-image" src="/images/lpl.png"></image>
+      <text class="post-content">React作为日常使用比较频繁的框架，这里就不详细说明了，这里主要是想通过几篇文章让大家快速上手Electron以及与React完美融合。</text>
+      <view class="post-like">
+        <l-icon class="post-like-image" size="32" color="#666" name="favor"></l-icon>
+        <text class="post-like-font">92</text>
+        <l-icon class="post-like-image" size="32" color="#666" name="eye"></l-icon>
+        <text class="post-like-font">102</text>
+      </view>
+    </view>
+
+  </view>
 </view>
