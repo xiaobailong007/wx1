@@ -13,7 +13,7 @@
 
   <view class="post-container">
     <view class="post-author-date">
-      <image class="post-author" src="/images/avatar/1.png"></image>
+      <image class="post-author" src="{{avatar}}"></image>
       <text class="post-date">Nov 18 2020</text>
     </view>
     <view>

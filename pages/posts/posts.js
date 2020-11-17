@@ -12,7 +12,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-console.log(123)
+    console.log(123)
+    var content={
+      title:"2020",
+      content:"8月9号",
+      imgSrc:"/images/1.png",
+      reading:102,
+      datail:"LPL",
+      dateTime:"24小时前",
+      headImgSrc:"/images/avatar/1.png"
+    }
   },
 
   /**
