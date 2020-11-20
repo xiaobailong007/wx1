@@ -1,4 +1,4 @@
-var local_database = [
+var  postList = [
     {
         date: "Sep 18 2016",
         title: "正是虾肥蟹壮时",
@@ -87,7 +87,7 @@ var local_database = [
         headImgSrc: "/images/post/vr.png",
         author: "深白色",
         date: "Nov 20 2016",
-        avatar: "../../../images/avatar/3.png",
+        avatar: "/images/avatar/3.png",
         postId: 4,
         music: {
           url: "http://music.163.com/song/media/outer/url?id=188204.mp3",
@@ -98,7 +98,7 @@ var local_database = [
     {
         title: "爱奇艺创维开展战略合作，合力布局开放娱乐生态",
         content: "爱奇艺和创维分别作为国内领先的在线视频品牌",
-        imgSrc: "/images/iqiyi.png",
+        imgSrc: "/images/post/vr.png",
         reading: 96,
         detail: "爱奇艺和创维分别作为国内领先的在线视频品牌和家电品牌。双方一直锐意创新，为用户提供优质的服务体验和产品体验。据悉，爱奇艺与创维将展开从资本到VIP会员服务等各方面的深入合作。籍由此次合作，爱奇艺将战略投资创维旗下拥有高端互联网电视品牌的酷开公司。从下一财年开始，创维旗下互联网电视将通过银河互联网电视集成播控平台，预置VIP会员服务及相关内容。这种捆绑终端与VIP内容的全新销售模式，将大幅提升互联网电视终端用户的体验，给予用户更多优质内容的选择。",
         collection: 26,
@@ -106,7 +106,7 @@ var local_database = [
         headImgSrc: "/images/iqiyi.png",
         author: "深白色",
         date: "Nov 20 2016",
-        avatar: "../../../images/avatar/5.png",
+        avatar: "/images/avatar/5.png",
         postId: 5,
         music: {
           url: "http://music.163.com/song/media/outer/url?id=152428.mp3",
@@ -116,6 +116,10 @@ var local_database = [
     },
 ]
 
-module.exports = {
-    postList: local_database
+// module.exports = {
+//     postList: local_database
+// }
+
+export {
+   postList
 }

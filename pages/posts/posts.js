@@ -1,4 +1,13 @@
+const data = require("../../data/data");
+
 // pages/posts/posts.js
+// var postData = require("../../data/data.js");
+// console.log(postData)
+
+import {
+  postList
+} from '../../data/data.js'
+console.log(postList)
 Page({
 
   /**
@@ -11,41 +20,34 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad(options) {
     console.log(123);
 
-    var content = [{
-      title: "2020111",
-      content: "8月9号111",
-      imgSrc: "/images/1.png",
-      reading: 102,
-      collection: 92,
-      datail: "LPL",
-      dateTime: "24小时前",
-      headImgSrc: "/images/avatar/1.png",
-      auatar: "猫是猫的猫",
-      data: "Nov 20 2020",
-      avatar: "/images/avatar/5.png",
-      postId: 3
-    },
-    {
-      title: "2020111",
-      content: "8月9号111",
-      imgSrc: "/images/1.png",
-      reading: 102,
-      collection: 92,
-      datail: "LPL",
-      dateTime: "24小时前",
-      headImgSrc: "/images/avatar/1.png",
-      auatar: "猫是猫的猫",
-      data: "Nov 20 2020",
-      avatar: "/images/avatar/5.png",
-      postId: 3
-    }
-  ];
+    // var content={
+    //   title:"2020",
+    //   content:"8月9号",
+    //   imgSrc:"/images/1.png",
+    //   dataNum:{
+    //     reading:102,
+    //     collection:92
+    //   },
+    //   datail:"LPL",
+    //   dateTime:"24小时前",
+    //   headImgSrc:"/images/avatar/1.png",
+    //   auatar:"猫是猫的猫",
+    //   data:"Nov 20 2020",
+    //   avatar:"/images/avatar/5.png",
+    //   postId:3
+    // };
     this.setData({
-      posts:content
+      postList
     });
+  },
+
+  onGoToDetail(event) {
+    wx.navigateTo({
+      url: '/pages/post-detail/post-detail',
+    })
   },
 
   /**
