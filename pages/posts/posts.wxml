@@ -12,21 +12,22 @@
   </swiper>
 
   <view class="post-container">
+
+    <block wx:for="{{posts}}" wx:key="idnex" wx:for-item="item"> 
     <view class="post-author-date">
-      <image class="post-author" src="{{avatar}}"></image>
-      <text class="post-date">{{data}}</text>
+      <image class="post-author" src="{{item.avatar}}"></image>
+      <text class="post-date">{{item.data}}</text>
     </view>
-    <view>
-      <text class="post-title">{{titel}}</text>
-      <image class="post-image" src="{{imgSrc}}"></image>
-      <text class="post-content">{{content}}</text>
-      <view class="post-like">
-        <l-icon class="post-like-image" size="32" color="#666" name="favor"></l-icon>
-        <text class="post-like-font">{{dataNum.collection}}</text>
-        <l-icon class="post-like-image" size="32" color="#666" name="eye"></l-icon>
-        <text class="post-like-font">{{dataNum.reading}}</text>
-      </view>
+    <text class="post-title">{{item.title}}</text>
+    <image class="post-image" src="{{item.imgSrc}}"></image>
+    <text class="post-content">{{item.content}}</text>
+    <view class="post-like">
+      <l-icon class="post-like-image" size="32" color="#666" name="favor"></l-icon>
+      <text class="post-like-font">{{item.collection}}</text>
+      <l-icon class="post-like-image" size="32" color="#666" name="eye"></l-icon>
+      <text class="post-like-font">{{item.reading}}</text>
     </view>
+  </block>
 
   </view>
 </view>

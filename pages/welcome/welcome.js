@@ -7,7 +7,16 @@ Page({
   data: {
 
   },
+  onTop: function () {
+    console.log("1")
+    // wx.navigateTo({
+    //   url: "/pages/posts/posts"
+    // })
 
+    wx.redirectTo({
+      url: "/pages/posts/posts"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
