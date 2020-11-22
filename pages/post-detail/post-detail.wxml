@@ -1,13 +1,13 @@
 <view class="container">
-  <image class="head-image" src="/images/bestplayers.png"></image>
+  <image class="head-image" src="{{postData.headImgSrc}}"></image>
   <view class="author-data">
-    <image src="/images/avatar/2.png" class="avatar"></image>
-    <text class="author">七月</text>
+    <image src="{{postData.avatar}}" class="avatar"></image>
+    <text class="author">{{postData.author}}</text>
     <text class="const-text">发表于</text>
-    <text class="date">16小时前</text>
+    <text class="date">{{postData.dateTime}}</text>
   </view>
 
-  <text class="title">LPL夏季最佳阵容</text>
+  <text class="title">{{postData.title}}</text>
 
   <view class="tool">
     <view class="circle">
@@ -17,5 +17,5 @@
 
     <view class="horizon"></view>
   </view>
-  <text class="detail">菊黄蟹正肥，品尝秋之味。徐志摩把“看初花的荻芦”和“到楼外楼吃蟹”并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，壳凸红脂块块香”；在《世说新语》里，晋毕卓更是感叹“右手持酒杯，左手持蟹螯，拍浮酒船中</text>
+  <text class="detail">{{postData.detail}}</text>
 </view>

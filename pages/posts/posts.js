@@ -1,12 +1,10 @@
-const data = require("../../data/data");
+import {postList} from '../../data/data'
 
 // pages/posts/posts.js
 // var postData = require("../../data/data.js");
 // console.log(postData)
 
-import {
-  postList
-} from '../../data/data.js'
+
 console.log(postList)
 Page({
 
@@ -21,7 +19,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(123);
 
     // var content={
     //   title:"2020",
@@ -45,9 +42,11 @@ Page({
   },
 
   onGoToDetail(event) {
-    console.log(event);
+
+    const pid = event.currentTarget.dataset.postId;
+
     wx.navigateTo({
-      url: '/pages/post-detail/post-detail',
+      url: '/pages/post-detail/post-detail?pid='+pid
     })
   },
 
