@@ -11,7 +11,9 @@ Component({
    * 组件的初始数据
    */
   data: {
-    postData:{}
+    postData:{},
+    collected:false,
+    _pid:null,
   },
 
   /**
@@ -20,9 +22,25 @@ Component({
   methods: {
     onLoad:function(options){
       const postData = postList[options.pid]
+      this.data._pid = options.pid
+      const postsCollected = wx.getStorageSync('postsCollected')
+      const collected = postsCollected[this.data._pid]
+   
       this.setData({
-        postData
+        postData,
+        collected
       })
+    },
+    onCollect(event){
+//未收藏
+const postsCollected ={};
+postsCollected[this.data._pid]=true
+this.data.collected = true
+this.setData({
+  collected:this.data.collected
+})
+wx.setStorageSync('posts_collected',postsCollected)
+
     }
   }
 })
