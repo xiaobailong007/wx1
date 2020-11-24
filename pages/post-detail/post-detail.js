@@ -39,21 +39,44 @@ Component({
         collected
       })
     },
-    onCollect(event) {
+
+    onMusic(event) {
+      const mgr = wx.getBackgroundAudioManager()
+      mgr.src = postList[1].music.url
+      mgr.title = postList[1].music.title
+    },
+
+    async onShare(event) {
+      const result = await wx.showActionSheet({
+        itemList: ['分享到QQ', '分享到微信', '分享到朋友圈'],
+      })
+      console.log(result)
+    },
+
+    async onCollect(event) {
       //未收藏
       const postsCollected = this.data._postsCollected;
       wx.getStorageSync('key')
       postsCollected[this.data._pid] = !this.data.collected
-      //this.data.collected = true
       this.setData({
         collected: !this.data.collected
       })
       wx.setStorageSync('posts_collected', postsCollected)
 
       wx.showToast({
-        title: !this.data.collected?'取消收藏':'收藏成功',
+        title: !this.data.collected ? '取消收藏' : '收藏成功',
         duration: 3000
       })
+      // const result = await wx.showModal({
+      //   title: '是否收藏文章',
+      //   // success(res) {
+      //   //   console.log(res)
+      //   // }
+      // })
+      // console.log(result)
+      // if (result.confirm) {
+
+      // }
 
     }
   }
