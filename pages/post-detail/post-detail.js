@@ -15,7 +15,9 @@ Component({
   data: {
     postData: {},
     collected: false,
+    //不做数据绑定的加上_
     _pid: null,
+    _postsCollected: {}
   },
 
   /**
@@ -25,7 +27,8 @@ Component({
     onLoad: function (options) {
       const postData = postList[options.pid]
       this.data._pid = options.pid
-      const postsCollected = wx.getStorageSync('postsCollected')
+      const postsCollected = wx.getStorageSync('posts_collected')
+      this.data._postsCollected = postsCollected
       let collected = postsCollected[this.data._pid]
       if (collected === undefined) {
         //如果undefined,说明文章从没有被收藏过
@@ -38,13 +41,19 @@ Component({
     },
     onCollect(event) {
       //未收藏
-      const postsCollected = {};
-      postsCollected[this.data._pid] = true
-      this.data.collected = true
+      const postsCollected = this.data._postsCollected;
+      wx.getStorageSync('key')
+      postsCollected[this.data._pid] = !this.data.collected
+      //this.data.collected = true
       this.setData({
-        collected: this.data.collected
+        collected: !this.data.collected
       })
       wx.setStorageSync('posts_collected', postsCollected)
+
+      wx.showToast({
+        title: !this.data.collected?'取消收藏':'收藏成功',
+        duration: 3000
+      })
 
     }
   }
