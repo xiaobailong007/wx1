@@ -1,6 +1,9 @@
 import {
   postList
-} from '../../data/data'
+} from '../../data/data.js'
+
+const app = getApp()
+
 Component({
   /**
    * 组件的属性列表
@@ -16,7 +19,6 @@ Component({
     postData: {},
     collected: false,
     isPlaying: false,
-    //不做数据绑定的加上_
     _pid: null,
     _postsCollected: {},
     _mgr: null
@@ -48,22 +50,27 @@ Component({
     },
 
     onMusicStart(event) {
-      console.log('onMusicStart')
+      console.log('11')
       const mgr = this.data._mgr
       const music = postList[this.data._pid].music
 
       mgr.src = music.url
       mgr.title = music.title
       mgr.coverImgUrl = music.coverImg
+
+      app.gIsPlayingMusic = true
+
       this.setData({
         isPlaying: true
       })
     },
 
     onMusicStop(event) {
-      console.log('onMusicStop')
       const mgr = this.data._mgr
-      mgr.stop()
+      console.log(mgr)
+      mgr.pause()
+
+      app.gIsPlayingMusic = false
       this.setData({
         isPlaying: false
       })
