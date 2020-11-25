@@ -15,6 +15,7 @@ Component({
   data: {
     postData: {},
     collected: false,
+    isPlaying: false,
     //不做数据绑定的加上_
     _pid: null,
     _postsCollected: {}
@@ -40,10 +41,23 @@ Component({
       })
     },
 
-    onMusic(event) {
+    onMusicStart(event) {
       const mgr = wx.getBackgroundAudioManager()
-      mgr.src = postList[1].music.url
-      mgr.title = postList[1].music.title
+      const music = postList[this.data._pid].music
+      mgr.src = music.url
+      mgr.title = music.title
+      mgr.coverImgUrl=music.coverImg
+      this.setData({
+        isPlaying: true
+      })
+    },
+
+    onMusicStop(event) {
+      const mgr = wx.getBackgroundAudioManager()
+      mgr.stop()
+      this.setData({
+        isPlaying:false
+      })
     },
 
     async onShare(event) {
