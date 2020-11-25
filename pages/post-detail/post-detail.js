@@ -18,7 +18,8 @@ Component({
     isPlaying: false,
     //不做数据绑定的加上_
     _pid: null,
-    _postsCollected: {}
+    _postsCollected: {},
+    _mgr: null
   },
 
   /**
@@ -39,24 +40,32 @@ Component({
         postData,
         collected
       })
+
+      const mgr = wx.getBackgroundAudioManager()
+      this.data._mgr = mgr
+      mgr.onPlay(this.onMusicStart)
+      mgr.onPause(this.onMusicStop)
     },
 
     onMusicStart(event) {
-      const mgr = wx.getBackgroundAudioManager()
+      console.log('onMusicStart')
+      const mgr = this.data._mgr
       const music = postList[this.data._pid].music
+
       mgr.src = music.url
       mgr.title = music.title
-      mgr.coverImgUrl=music.coverImg
+      mgr.coverImgUrl = music.coverImg
       this.setData({
         isPlaying: true
       })
     },
 
     onMusicStop(event) {
-      const mgr = wx.getBackgroundAudioManager()
+      console.log('onMusicStop')
+      const mgr = this.data._mgr
       mgr.stop()
       this.setData({
-        isPlaying:false
+        isPlaying: false
       })
     },
 
