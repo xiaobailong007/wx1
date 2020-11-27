@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "movie-list":"/components/movie-list/index"
+  },
+  "navigationBarBackgroundColor": "#C22A1E"
+}

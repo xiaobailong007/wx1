@@ -1,18 +1,22 @@
-import {postList} from '../../data/data'
+import {
+  postList
+} from '../../data/data'
 
 // pages/posts/posts.js
 // var postData = require("../../data/data.js");
 // console.log(postData)
 
 
-console.log(postList)
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    res: {
+      text: "123"
+    }
   },
 
   /**
@@ -46,7 +50,7 @@ Page({
     const pid = event.currentTarget.dataset.postId;
 
     wx.navigateTo({
-      url: '/pages/post-detail/post-detail?pid='+pid
+      url: '/pages/post-detail/post-detail?pid=' + pid
     })
   },
 

@@ -1,4 +1,4 @@
-// pages/welcome/welcome.js
+// pages/movies/movies.js
 Page({
 
   /**
@@ -7,15 +7,7 @@ Page({
   data: {
 
   },
-  onTop: function () {
-    // wx.navigateTo({
-    //   url: "/pages/posts/posts"
-    // })
 
-    wx.switchTab({
-      url: "/pages/posts/posts"
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */

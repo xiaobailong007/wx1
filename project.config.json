@@ -78,6 +78,12 @@
           "pathName": "pages/post-detail/post-detail",
           "query": "pid=2",
           "scene": null
+        },
+        {
+          "name": "pages/movies/movies",
+          "pathName": "pages/movies/movies",
+          "query": "",
+          "scene": null
         }
       ]
     }
