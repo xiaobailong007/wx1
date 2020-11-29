@@ -9,8 +9,8 @@ Page({
    */
   data: {
     inTheaters: [],
-    comingSoon:[],
-    top250:[]
+    comingSoon: [],
+    top250: []
   },
 
   /**
@@ -18,29 +18,41 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: app.gBaseUrl+'in_theaters?start=0&count=3',
-      success:(res) => {
+      url: app.gBaseUrl + 'in_theaters',
+      data: {
+        start: 0,
+        count: 3
+      },
+      success: (res) => {
         this.setData({
-          inTheaters:res.data.subjects
+          inTheaters: res.data.subjects
         })
       }
     })
 
 
     wx.request({
-      url: app.gBaseUrl+'coming_soon?start=0&count=3',
-      success:(res) => {
+      url: app.gBaseUrl + 'coming_soon',
+      data: {
+        start: 0,
+        count: 3
+      },
+      success: (res) => {
         this.setData({
-          comingSoon:res.data.subjects
+          comingSoon: res.data.subjects
         })
       }
     })
 
     wx.request({
-      url: app.gBaseUrl+'top250?start=0&count=3',
-      success:(res) => {
+      url: app.gBaseUrl + 'top250',
+      data: {
+        start: 0,
+        count: 3
+      },
+      success: (res) => {
         this.setData({
-          top250:res.data.subjects
+          top250: res.data.subjects
         })
       }
     })
