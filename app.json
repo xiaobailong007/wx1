@@ -3,7 +3,9 @@
     "pages/welcome/welcome",
     "pages/posts/posts",
     "pages/post-detail/post-detail",
-    "pages/movies/movies"
+    "pages/movies/movies",
+    "pages/more-movie/more-movie",
+    "pages/more-detail/more-detail"
   ],
   "requiredBackgroundModes": [
     "audio",
@@ -11,7 +13,7 @@
   ],
   "window": {
     "navigationBarBackgroundColor": "#C22A1E",
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
@@ -36,5 +38,8 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap83.json"
+  "sitemapLocation": "sitemap83.json",
+  "usingComponents": {
+    "movie": "/components/movie/index"
+  }
 }

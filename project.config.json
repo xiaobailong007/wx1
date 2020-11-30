@@ -84,6 +84,11 @@
           "pathName": "pages/movies/movies",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/movies-movie/movies-movies",
+          "pathName": "pages/movies-movie/movies-movies",
+          "scene": null
         }
       ]
     }

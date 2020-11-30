@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "movie-list":"/components/movie-list/index"
+    "movie-list": "/components/movie-list/index",
+    "l-search-bar": "/miniprogram_npm/lin-ui/search-bar/index"
   },
-  "navigationBarBackgroundColor": "#C22A1E"
+  "navigationBarBackgroundColor": "#C22A1E",
+  "navigationBarTitleText":"光与影"
+
 }
