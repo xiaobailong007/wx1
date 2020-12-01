@@ -1,20 +1,41 @@
-// pages/more-detail/more-detail.js
+import {
+  convertToCastString
+} from '../../utils/utils'
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    movie: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const mid = options.mid
+    wx.request({
+      url: app.gBaseUrl + 'subject/' + mid,
+      success: (res) => {
+        this.processMovieData(res.data)
+        this.setData({
+          movie: res.data
+        })
+      }
+    })
   },
 
+  processMovieData(movie) {
+    convertToCastString(movie.directors)
+  },
+
+  onViewPost(event) {
+    wx.previewImage({
+      urls: [this.data.movie.images.large],
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -5,7 +5,7 @@
     "pages/post-detail/post-detail",
     "pages/movies/movies",
     "pages/more-movie/more-movie",
-    "pages/more-detail/more-detail"
+    "pages/movie-detail/movie-detail"
   ],
   "requiredBackgroundModes": [
     "audio",
@@ -40,6 +40,8 @@
   },
   "sitemapLocation": "sitemap83.json",
   "usingComponents": {
-    "movie": "/components/movie/index"
+    "movie": "/components/movie/index",
+    "l-search-bar": "/miniprogram_npm/lin-ui/search-bar",
+    "l-rate": "/miniprogram_npm/lin-ui/rate"
   }
 }

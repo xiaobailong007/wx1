@@ -23,36 +23,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
-    // var content={
-    //   title:"2020",
-    //   content:"8月9号",
-    //   imgSrc:"/images/1.png",
-    //   dataNum:{
-    //     reading:102,
-    //     collection:92
-    //   },
-    //   datail:"LPL",
-    //   dateTime:"24小时前",
-    //   headImgSrc:"/images/avatar/1.png",
-    //   auatar:"猫是猫的猫",
-    //   data:"Nov 20 2020",
-    //   avatar:"/images/avatar/5.png",
-    //   postId:3
-    // };
     this.setData({
       postList
     });
   },
 
   onGoToDetail(event) {
-
-    const pid = event.currentTarget.dataset.postId;
-
+    const pid = event.currentTarget.dataset.postId ||event.detail.pid;
     wx.navigateTo({
       url: '/pages/post-detail/post-detail?pid=' + pid
     })
   },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

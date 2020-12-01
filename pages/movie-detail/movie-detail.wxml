@@ -1,0 +1,34 @@
+<view class="container">
+  <image mode="aspectFill" class="head-img" src="{{movie.images.large}}"></image>
+  <view class="head-img-hover">
+    <text class="main-title">{{movie.title}}</text>
+    <text class="sub-title">{{movie.countries[0]+'.'+movie.year}}</text>
+    <view class="like">
+    <text class="highligt-font">{{movie.wish_count}}</text>
+    <text class="plain-font">人喜欢</text>
+    <text class="highligt-font">{{movie.comments_count}}</text>
+    <text class="plain-font">条评论</text>
+    </view>
+    <image bind:tap="onViewPost" class="movie-img" src="{{movie.images.large}}"></image>
+  </view>
+
+<view class="summary">
+  <view class="original-title">
+    <text>{{movie.title}}</text>
+  </view>
+  <view class="flex-row">
+    <text class="mark">评分</text>
+    <l-rate disabled="{{true}}" size="22" score="{{movie.nating.stars/10}}"></l-rate>
+    <text>{{movie.rating.average}}</text>
+  </view>
+  <view class="flex-row">
+    <text class="mark">导演</text>
+    <text>{{movie.directors[0].name}}</text>
+  </view>
+  <view class="flex-row">
+    <text class="mark">类型</text>
+    <text>{{movie.generes}}</text>
+  </view>
+</view>
+
+</view>

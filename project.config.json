@@ -86,8 +86,9 @@
           "scene": null
         },
         {
-          "name": "pages/movies-movie/movies-movies",
-          "pathName": "pages/movies-movie/movies-movies",
+          "name": "pages/movie-detail/movie-detail",
+          "pathName": "pages/movie-detail/movie-detail",
+          "query": "mid=305",
           "scene": null
         }
       ]
